@@ -4,13 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CiBookmarkCheck } from "react-icons/ci";
 
-interface Props {
-  icon: React.ReactNode;
+export interface SidebarItemProps {
+  icon: JSX.Element;
   path: string;
   title: string;
 }
 
-export const SidebarItem = ({ icon, path, title }: Props) => {
+export const SidebarItem = ({ icon, path, title }: SidebarItemProps) => {
   const pathName = usePathname();
 
   {
