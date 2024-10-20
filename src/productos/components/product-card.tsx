@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { IoAddCircleOutline, IoTrashOutline } from "react-icons/io5";
 import { Star } from "./star";
 import { addProductToCart } from "@/shopping-cart/actions";
@@ -20,8 +21,11 @@ export const ProductCard = ({
   rating,
   image,
 }: ProductCardProps) => {
+  const router = useRouter();
+
   const onAddToCart = () => {
     addProductToCart(id);
+    router.refresh();
   };
 
   return (
