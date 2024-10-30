@@ -17,6 +17,8 @@ export default async function page() {
           <span>{session.user?.name}</span>
           <span>{session.user?.email}</span>
           <span>{session.user?.email}</span>
+
+          <div>{JSON.stringify(session, null, 2)}</div>
         </div>
       </WidgetItem>
     </div>
