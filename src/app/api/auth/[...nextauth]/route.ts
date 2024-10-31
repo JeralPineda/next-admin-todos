@@ -39,6 +39,10 @@ export const authOptions: NextAuthOptions = {
         },
       });
 
+      if (dbUser?.isActive === false) {
+        throw Error("User is not active");
+      }
+
       token.roles = dbUser?.roles ?? ["no-roles"];
       token.id = dbUser?.id ?? "no-uuid";
 
